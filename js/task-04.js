@@ -4,30 +4,21 @@ sortArray(numbers);
 
 function sortArray(arr) {
     var tempEl = '';
-    var i = 0;
     var j = 0;
 
-    while (j < arr.length) {
-
-        while (i < arr.length) {
-            if (arr[i] > arr[i + 1]) {
-
-                tempEl = arr[i];
-
-                arr[i] = arr[i + 1];
-
-                arr[i + 1] = tempEl;
+    while (j < arr.length - 1) {
+        var i = 0;
+        while (i < arr.length - 1 - j) {
+            if (arr[i + 1] < arr[i]) {
+                tempEl = arr[i + 1];
+                arr[i + 1] = arr[i];
+                arr[i] = tempEl;
             }
-
             i++;
         }
-
         j++;
-
     }
-
     console.log(arr);
-    return arr;
 }
 
 
